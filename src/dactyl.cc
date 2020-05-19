@@ -86,8 +86,10 @@ int main() {
       key->extra_width_top = 5;
     }
   }
-  d.key_1.extra_width_top = 9;
-  d.key_2.extra_width_top = 3.8;
+  d.key_plus.extra_width_top = 7.4;
+  d.key_1.extra_width_top = 11.58;
+  d.key_2.extra_width_top = 4.08;
+  d.key_3.extra_width_top = 4.26;
 
   // bottom alpha row
   d.key_b.extra_width_bottom = 3;
