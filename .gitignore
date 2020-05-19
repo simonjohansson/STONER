@@ -1,0 +1,12 @@
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+cover.scad
+dactyl
+glm/
+lib/
+*.scad
+
+*.swp
+*.swo
