@@ -49,20 +49,24 @@ int main() {
 
   // Set all of the widths here. This must be done before calling any of GetTopLeft etc.
 
-  d.key_backspace.extra_width_bottom = 2;
+  d.key_backspace.extra_width_bottom = 5;
   d.key_backspace.extra_width_left = 2;
-  d.key_delete.extra_width_bottom = 2;
-  d.key_end.extra_width_bottom = 2;
-  d.key_ctrl.extra_width_top = 2;
-  d.key_alt.extra_width_top = 2;
-  d.key_alt.extra_width_right = 2;
+  d.key_delete.extra_width_bottom = 5;
+
+  d.key_ctrl.extra_width_top = 5;
+
+  d.key_alt.extra_width_top = 5;
+  d.key_alt.extra_width_right = 5;
   d.key_alt.extra_width_left = 2;
-  d.key_home.extra_width_right = 2;
+
+  d.key_home.extra_width_right = 5;
   d.key_home.extra_width_left = 2;
   d.key_home.extra_width_top = 2;
+
   d.key_end.extra_width_top = 2;
-  d.key_end.extra_width_right = 2;
+  d.key_end.extra_width_right = 5;
   d.key_end.extra_width_left = 2;
+  d.key_end.extra_width_bottom = 5;
 
   // left wall
   for (Key* key : d.grid.column(0)) {
