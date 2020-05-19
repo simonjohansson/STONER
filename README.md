@@ -1,3 +1,10 @@
+# Whats different in this fork?
+
+* Added a couple of millimeters between the keys and the walls to allow for easier soldering.
+* Removed some of the more extreme angles to allow for easier sanding/priming/paining.
+* Restructured the build step.
+  * `watch_and_build.sh` 
+
 # Dactyl CC Keyboard
 
 This keyboard and associated libraries take heavy inspiration from the
