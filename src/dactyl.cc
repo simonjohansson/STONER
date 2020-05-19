@@ -75,17 +75,26 @@ int main() {
     }
   }
 
-  d.key_5.extra_width_right = 2;
-  d.key_t.extra_width_right = 3;
-  d.key_g.extra_width_right = 3;
+  // right wall
+  d.key_5.extra_width_right = 5;
+  d.key_t.extra_width_right = 6;
+  d.key_g.extra_width_right = 6;
 
+  // top row
   for (Key* key : d.grid.row(0)) {
-    // top row
     if (key) {
-      key->extra_width_top = 2;
+      key->extra_width_top = 5;
     }
   }
+  d.key_1.extra_width_top = 9;
+  d.key_2.extra_width_top = 3.8;
+
+  // bottom alpha row
   d.key_b.extra_width_bottom = 3;
+
+  // bottom row
+  d.key_tilde.extra_width_bottom = 5;
+  d.key_slash.extra_width_bottom = 8;
 
   std::vector<Shape> shapes;
 
