@@ -1,4 +1,4 @@
-# Whats different in this fork?
+# Whats different between STONER and Dactyl-CC? 
 
 * Added a couple of millimeters between the keys and the walls to allow for easier soldering.
 * Removed some of the more extreme angles to allow for easier sanding/priming/paining.
@@ -8,43 +8,41 @@
 * Restructured the build step.
   * `watch_and_build.sh` 
 
-# Dactyl CC Keyboard
+# What needs to be done?
 
-This keyboard and associated libraries take heavy inspiration from the
- [dactyl](https://github.com/adereth/dactyl-keyboard) and
-the [dactyl_manuform](https://github.com/abstracthat/dactyl-manuform) keyboards.
- Major thanks to Matthew Adereth and Tom Short for their work.
+* Add reccess for the M3 screws so they sit flush in the base
+* Figure out what microcontroller to use and cut out a piece for its USB in the bottom plate.
+* Figure out how to integrate a Thinkpad Trackpoint.
 
-The dactyl-cc keyboard takes a different approach to the structure of the code (and language)
- as well as being more similar in feel to the Kinesis Advantage 2.
+# Why is it called STONER?
 
-If you are interested in a smaller version see the [mini](https://github.com/mjohns/dactyl-cc-mini) version.
+the be**ST** keyb**O**ard i**N** th**E** unive**R**se
 
-If you are interested in building it you can take a look at the [guide](guide/README.md). Any dactyl build guide you choose should work.
+# Acknowledgements
 
-![image](https://imgur.com/CUbPLZC.jpg)
+This keyboard is essentially a [dactyl-cc](https://github.com/mjohns/dactyl-cc) with slight modifications outlined above. So thanks a million [mjohns](https://github.com/mjohns) for designing the second best keyboard in the universe.
 
-CMake is the preferred way to build and leads to the fastest recompilation times. You only need to run the cmake command once.
+Furthermore, none of this would be possible wihout the third best keyboard in the universe, the [Kinesis Advantage](https://kinesis-ergo.com/shop/advantage2/).
+If you dont feel like faffing around with 3D printing and soldering this is bar none, imho, the best ergonomic keyboard you can buy. Ergodox is neat, but from a purely ergonomic standpoint the Kinesis is so much more confortable. 
+
+# How do I build?
+
+First start by building dactyl.
+
 ```
-cd build
-cmake ../src
-make && ./dactyl
-```
-
-If you do not have cmake installed you can run the simple build script which just uses g++.
-```
-cd build
-./build_simple.sh
+$ cmake src # You only need to do this once
+$ make # Creates a binary that generates .scad
+$ ./dactyl # Generates the .scad files that can be opened and viewed in OpenSCAD
 ```
 
-You can generate an stl from the command line with the following command:
+This gets tedious quickly if you are making many changes. Simply run `watch_and_build.sh` and open the .scad file you are interested in inside OpenSCAD, make a change and it will all automagically recompile and re-render the changes inside OpenSCAD.
+
+Once you have generated your scad you need to render STL's (these are already in `things`)
+
 ```
-cd build
-openscad -o ../things/v1_left.stl v1_left.scad
+$ ./makeThings.sh
 ```
 
-![image](https://imgur.com/IP2UYYA.jpg)
-![image](https://imgur.com/LvZQUT4.jpg)
-![image](https://imgur.com/0AYtoey.jpg)
+# How long does it take to print?
 
-[other images](https://imgur.com/a/jBbUXNx)
+I've printed the top part in around 20h at 120mm/s with 0.2 layer height and the bottom part in around 2h at the same settings. 
