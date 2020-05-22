@@ -366,17 +366,6 @@ int main() {
   negative_shapes.push_back(
       d.key_backspace.GetTopLeft().Apply(Cube(50, 50, 6).TranslateZ(3)).Color("red"));
 
-  // Cut out holes for cords. Inserts can be printed to fit in.
-  Shape connector_hole = Cube(10, 20, 10).TranslateZ(12 / 2);
-  glm::vec3 connector_location1 = d.key_4.GetTopLeft().Apply(kOrigin);
-  connector_location1.z = 6;
-  connector_location1.x += 9.75;
-  glm::vec3 connector_location2 = d.key_5.GetTopLeft().Apply(kOrigin);
-  connector_location2.z = 6;
-  connector_location2.x += 10.5;
-  negative_shapes.push_back(connector_hole.Translate(connector_location1));
-  negative_shapes.push_back(connector_hole.Translate(connector_location2));
-
   Shape result = UnionAll(shapes);
   // Subtracting is expensive to preview and is best to disable while testing.
   result = result.Subtract(UnionAll(negative_shapes));
