@@ -439,10 +439,26 @@ int main() {
       bottom_plate_shapes.push_back(Hull(key->GetSwitch()));
     }
 
-    Shape bottom_plate = UnionAll(bottom_plate_shapes)
+    Shape bottom_plate_base = UnionAll(bottom_plate_shapes)
                              .Projection()
                              .LinearExtrude(1.5)
                              .Subtract(UnionAll(screw_holes));
+
+
+    Shape bottom_plate_copy = UnionAll(bottom_plate_shapes)
+                            .Projection()
+                            .LinearExtrude(10)
+                            .Color("red");
+
+    Shape bottom_plate_smaller = UnionAll(bottom_plate_shapes)
+                            .Projection()
+                            .Scale(0.96)
+                            .LinearExtrude(10)
+                            .Color("green");
+
+    Shape bottom_plate_walls = bottom_plate_copy.Subtract(bottom_plate_smaller);
+    Shape bottom_plate = bottom_plate_base.Add(bottom_plate_walls.TranslateZ(5));
+
     bottom_plate.WriteToFile("v1_bottom_left.scad");
     bottom_plate.MirrorX().WriteToFile("v1_bottom_right.scad");
   }
