@@ -3,6 +3,7 @@
 * Added a couple of millimeters between the keys and the walls to allow for easier soldering.
 * Removed some of the more extreme angles to allow for easier sanding/priming/paining.
 * Added a 10mm wall to the base plate to raise the keyboard.
+* Move the screw holes around a bit to make sure the bottom sits flush and there are no gaps in the corners.
 * Restructured the build step.
   * `watch_and_build.sh` 
 
