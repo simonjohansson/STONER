@@ -327,6 +327,11 @@ int main() {
     screw_left_bottom.z = 0;
     screw_left_bottom.x += 3.2;
 
+    glm::vec3 screw_left_bottom_two = d.key_shift.GetBottomLeft().Apply(kOrigin);
+    screw_left_bottom_two.z = 0;
+    screw_left_bottom_two.x += 25;
+    screw_left_bottom_two.y += -25;
+
     glm::vec3 screw_left_top = d.key_plus.GetTopLeft().Apply(kOrigin);
     screw_left_top.z = 0;
     screw_left_top.x += 2.8;
@@ -334,29 +339,49 @@ int main() {
 
     glm::vec3 screw_right_top = d.key_5.GetTopRight().Apply(kOrigin);
     screw_right_top.z = 0;
-    screw_right_top.x -= .8;
-    screw_right_top.y += -.5;
+    screw_right_top.x -= 0;
+    screw_right_top.y += 0;
 
-    glm::vec3 screw_right_bottom = d.key_end.GetBottomLeft().Apply(kOrigin);
-    screw_right_bottom.z = 0;
-    screw_right_bottom.y += 3.5;
-    screw_right_bottom.x += 1.5;
+    // Thumb cluster
+    glm::vec3 screw_left_bottom_thumb = d.key_backspace.GetBottomLeft().Apply(kOrigin);
+    screw_left_bottom_thumb.z = 0;
+    screw_left_bottom_thumb.y -= 0;
+    screw_left_bottom_thumb.x += 5;
 
-    glm::vec3 screw_right_mid = d.key_ctrl.GetTopLeft().Apply(kOrigin);
-    screw_right_mid.z = 0;
-    screw_right_mid.y += -.9;
+    glm::vec3 screw_left_top_thumb = d.key_ctrl.GetBottomLeft().Apply(kOrigin);
+    screw_left_top_thumb.z = 0;
+    screw_left_top_thumb.y += 25;
+    screw_left_top_thumb.x += 6;
+
+    glm::vec3 screw_right_bottom_thumb = d.key_end.GetBottomLeft().Apply(kOrigin);
+    screw_right_bottom_thumb.z = 0;
+    screw_right_bottom_thumb.y -= 4;
+    screw_right_bottom_thumb.x += 24;
+
+    glm::vec3 screw_right_top_thumb = d.key_alt.GetTopLeft().Apply(kOrigin);
+    screw_right_top_thumb.z = 0;
+    screw_right_top_thumb.y -= 8;
+    screw_right_top_thumb.x += 22;
 
     shapes.push_back(Union(screw_insert.Translate(screw_left_top),
                            screw_insert.Translate(screw_right_top),
-                           screw_insert.Translate(screw_right_mid),
-                           screw_insert.Translate(screw_right_bottom),
-                           screw_insert.Translate(screw_left_bottom)));
+                           screw_insert.Translate(screw_left_bottom),
+                           screw_insert.Translate(screw_left_bottom_two),
+
+                           screw_insert.Translate(screw_left_top_thumb),
+                           screw_insert.Translate(screw_left_bottom_thumb),
+                           screw_insert.Translate(screw_right_top_thumb),
+                           screw_insert.Translate(screw_right_bottom_thumb)));
     screw_holes = {
         screw_hole.Translate(screw_left_top),
         screw_hole.Translate(screw_right_top),
-        screw_hole.Translate(screw_right_mid),
-        screw_hole.Translate(screw_right_bottom),
         screw_hole.Translate(screw_left_bottom),
+        screw_hole.Translate(screw_left_bottom_two),
+
+        screw_hole.Translate(screw_left_top_thumb),
+        screw_hole.Translate(screw_left_bottom_thumb),
+        screw_hole.Translate(screw_right_top_thumb),
+        screw_hole.Translate(screw_right_bottom_thumb),
     };
   }
 
