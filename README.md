@@ -25,6 +25,13 @@ This keyboard is essentially a [dactyl-cc](https://github.com/mjohns/dactyl-cc) 
 Furthermore, none of this would be possible wihout the third best keyboard in the universe, the [Kinesis Advantage](https://kinesis-ergo.com/shop/advantage2/).
 If you dont feel like faffing around with 3D printing and soldering this is bar none, imho, the best ergonomic keyboard you can buy. Ergodox is neat, but from a purely ergonomic standpoint the Kinesis is so much more confortable. 
 
+# If the Kinesis Advantage is so good, why print a copy?
+
+* The firmware isn't terribly flexible or fun, you can ofc muck about and get QMK to run but I dont feel like messing with my Advantage.
+* Whilst there are mods to get bluetooth and USB-C charging, I dont feel like messing with my Advantage.
+* Its quite large, I would love to have a bowl of candy or cereal between my hands for long sessions, and the curvature between the finger islands make the bowl slide around. 
+* To integrate a trackpoint you need to bring out a dremel. The keyboard is >300$, and I have no confidence in my ability to create anything else than a very expensive broken piece of plastic.
+
 # How do I build?
 
 First start by building dactyl.
